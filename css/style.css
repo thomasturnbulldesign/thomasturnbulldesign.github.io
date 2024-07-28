@@ -645,89 +645,244 @@ form {
 			width: 70%;
 		}
 	}
-	/* Mobile Landscape Size to Tablet Portrait (devices and browsers) */
 	@media only screen and (min-width: 480px) and (max-width: 767px) {
-		 
-		 a.home{ margin-top:40px; width:95px; position:relative; z-index:100; }
-		 a.back-home{ float:right; width:100px; margin-top:40px; position:relative; z-index:50;}
-		 .content{ margin-top:-5px; }
-		 .content .grid li .box-title h1{ font-size:14px;}
-		 .content .grid li .box-shop{ height:auto;}
-		 .content .grid li .box-shop h1{ font-size:14px;}
-		 .content .col-img p.data, p.tit-gallery{  font-size:16px; }
-	 	 .content .col-img p.image-no2{ margin-top:35px;}
-		 .content .col-img p.image-border{ margin-top:70px;}
-		 .content .contact-right .map{ margin-top:30px;}
-		 .content .contact-left h2{  padding-top:15px;} 
-		 .content .col-right h2, .contact-left h2, .col-img h2{ font-size:14px; line-height:16px;}
-		 p { margin: 0 0 7px 0; font-size:12px; line-height:14px; } 
-		 .content .regesto .box-year .number { font-size:140px;}
-		 
-		 .add-top-right{ margin-top: 50px !important; }
-		 .content .news .line-news a.title-right-stampa, a.title-right-rassegna, a.title-right-download{ font-size:12px;}
-		 .data-left-stampa{  margin-right:10px;  }
-		 .news-bottom { margin-bottom: 20px !important; }
-		 .stampa-pdf{ font-size:12px;}
-	     .subscribe { width: 250px;}
-			.banner { /*width:100%; height: auto; */position: relative; top:0; float: left; margin-top: 110px; left:0; margin-left: -110px}
-		.bloccosocial { margin: 25px 0 0 25px; float: right !important;}
-
-		 
-		
-		/*---NEWSLETTER----*/  
-		.page-id-74 .content .col-img{display: none;}
-		.page-id-74 .content .col-txt{width: 100%;}
-		.page-id-74 .newsletter-subscription{width:80%;}
-		
+		.content {
+			display: flex;
+			flex-direction: row;
+			flex-wrap: nowrap;
 		}
-
-	/* Mobile Portrait Size to Mobile Landscape Size (devices and browsers) */
-	@media only screen and (max-width: 479px) { 
- 	
-	 #nav-desk{ display:none; visibility:hidden; height:0;}
-	 #nav{ min-height: inherit; display:inline; visibility:visible;}
-	 a.home{  margin-top:20px; position:relative; z-index:100; float:right;}
-	  a.back-home{ float:right; width:100px; margin-top:20px; position:relative; z-index:50;}
-	 .content{ margin-top:-15px; }
-	 .content .col-img p.data, p.tit-gallery{  font-size:16px; }
-	 .content .col-img p.image-no2{ margin-top:30px;}
-	 .content .col-img .box-image{ min-height:40px;}
-	 .content .col-img p.image-border{ margin-top:70px;}
-	 .content .contact-right .map{ margin-top:30px;} 
-	 .content .contact-left h2{  padding-top:15px;} 
-	 .content .contact-right{ min-height:300px;}
-	 .content .news .line-news a.title-right{ font-size:12px;}
-	 .content .news .line-news .data-left, .col-left-n .data-left{ font-size:12px;}
-	 .content .col-right h2, .contact-left h2, .col-img h2{ font-size:14px; line-height:16px;}
-	 p { margin: 0 0 7px 0; font-size:12px; line-height:14px; } 
-	  .content .grid li .box-title h1{ font-size:14px;}
-	  .content .grid li .box-shop{ height:auto;}
-	  .content .grid li .box-shop h1{ font-size:14px;}
-	  .content .regesto .box-year .number { font-size:100px;}
-	  
-	   .add-top-right{ margin-top: 30px !important; }
-	   .content .news .line-news a.title-right-stampa, a.title-right-rassegna, a.title-right-download{ font-size:12px; padding-bottom:10px;}
-	   .data-left-stampa{  margin-right:10px; width:100%; margin-bottom:5px; }
-	   .news-bottom { margin-bottom: 20px !important; }
-	    .stampa-pdf{ font-size:12px; width:100%; margin-right:0; margin-top:5px;}
-		
-		.subscribe { width: 200px;}
-		.subscribe-submit { right: -10px;}
-		
-		.menu-secondario-container  li a{ font-size:14px !important; line-height:22px !important}
-		#nav li ul li a, #nav-desk li a{ line-height:22px !important; color:#000; font-size:18px;}		
-		
-			/*.banner { width:100%; height: auto; position: relative; top:0; float: left; margin-top: 110px; left:0; margin-left: -110px}*/
-		/*.social{ display: none;}*/
-		
-		  .banner{display: none !important; visibility: hidden; }
-		 .bloccosocial { margin: 25px 0 0 25px; float: right !important;}
-		
-
-		
-	/*---NEWSLETTER----*/  
-	.page-id-74 .content .col-img{display: none;}
-	.page-id-74 .content .col-txt{width: 100%;}
-	.page-id-74 .newsletter-subscription{width:80%;}
-
-}
+		.menu {
+			flex: 0 0 auto;
+			width: 200px; /* Adjust as needed */
+		}
+		.grid {
+			flex: 1 1 auto;
+			display: flex;
+			flex-wrap: wrap;
+		}
+		.grid li {
+			flex: 1 1 calc(33.333% - 10px);
+			margin: 5px;
+			box-sizing: border-box;
+		}
+		.content .grid li .box-title h1 {
+			font-size: 14px;
+		}
+		.content .grid li .box-shop {
+			height: auto;
+		}
+		.content .grid li .box-shop h1 {
+			font-size: 14px;
+		}
+		.content .col-img p.data, p.tit-gallery {
+			font-size: 16px;
+		}
+		.content .col-img p.image-no2 {
+			margin-top: 35px;
+		}
+		.content .col-img p.image-border {
+			margin-top: 70px;
+		}
+		.content .contact-right .map {
+			margin-top: 30px;
+		}
+		.content .contact-left h2 {
+			padding-top: 15px;
+		}
+		.content .col-right h2, .contact-left h2, .col-img h2 {
+			font-size: 14px;
+			line-height: 16px;
+		}
+		p {
+			margin: 0 0 7px 0;
+			font-size: 12px;
+			line-height: 14px;
+		}
+		.content .regesto .box-year .number {
+			font-size: 140px;
+		}
+		.add-top-right {
+			margin-top: 50px !important;
+		}
+		.content .news .line-news a.title-right-stampa, a.title-right-rassegna, a.title-right-download {
+			font-size: 12px;
+		}
+		.data-left-stampa {
+			margin-right: 10px;
+		}
+		.news-bottom {
+			margin-bottom: 20px !important;
+		}
+		.stampa-pdf {
+			font-size: 12px;
+		}
+		.subscribe {
+			width: 250px;
+		}
+		.banner {
+			position: relative;
+			top: 0;
+			float: left;
+			margin-top: 110px;
+			left: 0;
+			margin-left: -110px;
+		}
+		.bloccosocial {
+			margin: 25px 0 0 25px;
+			float: right !important;
+		}
+		.page-id-74 .content .col-img {
+			display: none;
+		}
+		.page-id-74 .content .col-txt {
+			width: 100%;
+		}
+		.page-id-74 .newsletter-subscription {
+			width: 80%;
+		}
+	}
+	
+	@media only screen and (max-width: 479px) {
+		.content {
+			display: flex;
+			flex-direction: row;
+			flex-wrap: nowrap;
+		}
+		.menu {
+			flex: 0 0 auto;
+			width: 120px; /* Adjust as needed */
+		}
+		.grid {
+			flex: 1 1 auto;
+			display: flex;
+			flex-wrap: wrap;
+		}
+		.grid li {
+			flex: 1 1 calc(100% - 10px);
+			margin: 5px;
+			box-sizing: border-box;
+		}
+		#nav {
+			display: inline;
+			visibility: visible;
+			min-height: inherit;
+			font-size: 0.5rem;
+			padding: 2px;
+			margin: 2px;
+		}
+		a.home {
+			margin-top: 20px;
+			position: relative;
+			z-index: 100;
+			float: right;
+		}
+		a.back-home {
+			float: right;
+			width: 100px;
+			margin-top: 20px;
+			position: relative;
+			z-index: 50;
+		}
+		.content .col-img p.data, p.tit-gallery {
+			font-size: 16px;
+		}
+		.content .col-img p.image-no2 {
+			margin-top: 30px;
+		}
+		.content .col-img .box-image {
+			min-height: 40px;
+		}
+		.content .col-img p.image-border {
+			margin-top: 70px;
+		}
+		.content .contact-right .map {
+			margin-top: 30px;
+		}
+		.content .contact-left h2 {
+			padding-top: 15px;
+		}
+		.content .contact-right {
+			min-height: 300px;
+		}
+		.content .news .line-news a.title-right {
+			font-size: 12px;
+		}
+		.content .news .line-news .data-left, .col-left-n .data-left {
+			font-size: 12px;
+		}
+		.content .col-right h2, .contact-left h2, .col-img h2 {
+			font-size: 14px;
+			line-height: 16px;
+		}
+		p {
+			margin: 0 0 7px 0;
+			font-size: 12px;
+			line-height: 14px;
+		}
+		.content .grid li .box-title h1 {
+			font-size: 14px;
+		}
+		.content .grid li .box-shop {
+			height: auto;
+		}
+		.content .grid li .box-shop h1 {
+			font-size: 14px;
+		}
+		.content .regesto .box-year .number {
+			font-size: 100px;
+		}
+		.add-top-right {
+			margin-top: 30px !important;
+		}
+		.content .news .line-news a.title-right-stampa, a.title-right-rassegna, a.title-right-download {
+			font-size: 12px;
+			padding-bottom: 10px;
+		}
+		.data-left-stampa {
+			margin-right: 10px;
+			width: 100%;
+			margin-bottom: 5px;
+		}
+		.news-bottom {
+			margin-bottom: 20px !important;
+		}
+		.stampa-pdf {
+			font-size: 12px;
+			width: 100%;
+			margin-right: 0;
+			margin-top: 5px;
+		}
+		.subscribe {
+			width: 200px;
+		}
+		.subscribe-submit {
+			right: -10px;
+		}
+		.menu-secondario-container li a {
+			font-size: 14px !important;
+			line-height: 22px !important;
+		}
+		#nav li ul li a, #nav-desk li a {
+			line-height: 22px !important;
+			color: #000;
+			font-size: 18px;
+		}
+		.banner {
+			display: none !important;
+			visibility: hidden;
+		}
+		.bloccosocial {
+			margin: 25px 0 0 25px;
+			float: right !important;
+		}
+		.page-id-74 .content .col-img {
+			display: none;
+		}
+		.page-id-74 .content .col-txt {
+			width: 100%;
+		}
+		.page-id-74 .newsletter-subscription {
+			width: 80%;
+		}
+	}
+	
