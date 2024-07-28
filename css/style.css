@@ -644,15 +644,10 @@ form {
 		.page-id-74 .newsletter-subscription {
 			width: 70%;
 		}
-		.image-grid {
-			width: calc(100% - 20px); /* Adjust width for mobile */
-		}
-	}	}
+	}
 	/* Mobile Landscape Size to Tablet Portrait (devices and browsers) */
 	@media only screen and (min-width: 480px) and (max-width: 767px) {
 		 
-		 #nav-desk{ display:none; visibility:hidden; height:0;}
-		 #nav{ min-height: inherit; display:inline; visibility:visible;}
 		 a.home{ margin-top:40px; width:95px; position:relative; z-index:100; }
 		 a.back-home{ float:right; width:100px; margin-top:40px; position:relative; z-index:50;}
 		 .content{ margin-top:-5px; }
@@ -683,7 +678,6 @@ form {
 		.page-id-74 .content .col-img{display: none;}
 		.page-id-74 .content .col-txt{width: 100%;}
 		.page-id-74 .newsletter-subscription{width:80%;}
-		 
 		
 		}
 
