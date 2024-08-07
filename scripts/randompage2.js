@@ -39,7 +39,7 @@ function getRandomImage() {
         randomIndex = Math.floor(Math.random() * maxImages) + 1;
         
         // Construct the image path
-        randomImage = `image/${randomDir}/${randomIndex}.jpg`;
+        randomImage = `../image/${randomDir}/${randomIndex}.jpg`;
     } while (randomImage === lastImage);
 
     lastImage = randomImage;
