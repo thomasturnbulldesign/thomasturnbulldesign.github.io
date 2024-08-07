@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>FONDAZIONE ACHILLE CASTIGLIONI</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/skeleton.css">
+    <link rel="stylesheet" href="../css/other.css">
+    <style>
+        .header-logo {
+            width: 250px; /* Adjust the width as needed */
+            height: auto; /* Maintain the aspect ratio */
+            padding: 10px;
+            padding-top: 50px; /* Add padding to the top */
+        }
+        .title-container {
+            display: flex;
+            align-items: center;
+            padding: 10px;
+            margin-top: 30px; /* Adjust this value to move the logo down */
+        }
+        .image-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+    align-content: start;
+    justify-items: end;
+}
+        
+        .image-grid img {
+            width: 100%;
+            height: auto; /* Maintain aspect ratio */
+            display: block;
+        }
+		.image-grid {
+            display: grid;
+            grid-template-columns: repeat(6, 1fr); /* Six columns */
+            gap: 10px; /* Space between the images */
+            margin-top: 20px; /* Space above the grid */
+        }
+        /* Overlay styles */
+        #overlay {
+            display: none; /* Hidden by default */
+            position: fixed; /* Stay in place */
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 1000; /* Sit on top */
+        }
+        .window {
+            position: relative;
+            width: 80%;
+            height: 80%;
+            margin: 5% auto; /* Center the window */
+            background-color: #fff;
+            border: 2px solid #000;
+            box-shadow: 0px 0px 10px rgba(0,0,0,0.5);
+        }
+        .window-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 5px;
+            background-color: #00599C; /* Windows XP blue */
+            color: #fff;
+            font-size: 16px;
+        }
+        .window-header .close-btn {
+            background-color: #FF0000; /* Red close button */
+            color: #fff;
+            padding: 0 10px;
+            cursor: pointer;
+        }
+        .window-content {
+            width: 100%;
+            height: calc(100% - 30px); /* Full height minus header */
+        }
+        .window-content iframe {
+            width: 100%;
+            height: 100%;
+        }
+    </style>
+    <script>
+        function showOverlay() {
+            document.getElementById('overlay').style.display = 'block';
+        }
+        function hideOverlay() {
+            document.getElementById('overlay').style.display = 'none';
+        }
+    </script>
+</head>
+<body>
+    <div class="container columns">
+        <div class="title-container">
+            <img src="../image/logo.png" alt="Thomas Turnbull" class="header-logo" style="width: 80px; height: auto;">
+        </div>
+        <section class="content">
+            <div class="three columns mega-bottom">
+                <ul id="nav-desk">
+                    <li class="menu-item"><a href="/biography">BIOGRAPHY</a></li>
+                    <li class="spazio menu-item">
+                        <a>PROJECTS \\</a>
+                    </li>
+                    <li class="menu-item menu-item-has-children">
+                        <a href="/hairdryers">HAIR DRYERS</a>
+                        <ul class="sub-menu">
+                            <li class="sub-cat menu-item"><a href="https://www.fondazioneachillecastiglioni.it/la-fondazione/direzione/">direzione</a></li>
+                            <li class="sub-cat menu-item"><a href="https://www.fondazioneachillecastiglioni.it/la-fondazione/soci-e-partecipanti/">soci e partecipanti</a></li>
+                            <li class="sub-cat menu-item"><a href="https://www.fondazioneachillecastiglioni.it/sostenitori/">sostenitori</a></li>
+                            <li class="sub-cat menu-item"><a href="https://www.fondazioneachillecastiglioni.it/la-fondazione/persone/">persone</a></li>
+                            <li class="sub-cat menu-item"><a href="https://www.fondazioneachillecastiglioni.it/la-fondazione/attivita/">attività</a></li>
+                            <li class="sub-cat menu-item"><a href="https://www.fondazioneachillecastiglioni.it/gallery/">Gallery</a></li>
+                        </ul>
+                    </li>
+                    <li class="menu-item"><a href="/stihl">STIHL</a></li>
+                    <li class="prodotti-menu-item menu-item menu-item-has-children">
+                        <a href="/experimental">EXPERIMENTAL FUTURES</a>
+                    </li>
+                    <li class="post-menu-item menu-item"><a href="/projectors">PROJECTORS</a></li>
+                    <li class="spazio menu-item"><a>MISC \\</a></li>
+                    <li class="menu-item"><a href="/sketches">SKETCHES</a></li>
+                    <li class="menu-item"><a href="/cad">CAD</a></li>
+                    <li class="menu-item menu-item-has-children">
+                        <a onclick="showOverlay(); return false;">RANDOM PAGE</a>
+                    </li>
+                </ul>
+            </div>
+            <div class="image-grid" id="imageGrid">
+
+            </div>
+        </section>
+    </div>
+	
+	<script>
+    // Function to load a single image
+    function loadImage(image) {
+        const img = document.createElement('img');
+        img.src = image.dataset.src;
+        img.alt = image.dataset.alt;
+        image.appendChild(img);
+    }
+
+    // Function to observe images
+    function observeImages() {
+        const imageGrid = document.getElementById('imageGrid');
+        const observer = new IntersectionObserver((entries, observer) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    loadImage(entry.target);
+                    observer.unobserve(entry.target);
+                }
+            });
+        });
+
+        for (let i = 1; i <= 78; i++) {
+            const a = document.createElement('a');
+            const imgPath = `../image/experimental/${i}.jpg`;
+            a.href = imgPath;
+            a.target = '_blank'; // Open link in new tab
+            a.dataset.src = imgPath;
+            a.dataset.alt = 'Hairdryer Image ' + i;
+            imageGrid.appendChild(a);
+            observer.observe(a);
+        }
+    }
+
+    // Observe images when the page loads
+    window.onload = observeImages;
+</script>
+	
+<div id="overlay">
+    <div class="window">
+        <div class="window-header">
+            <span>Windows XP</span>
+            <span class="close-btn" onclick="hideOverlay()">X</span>
+        </div>
+        <div class="window-content">
+            <iframe src="" frameborder="0"></iframe>
+        </div>
+    </div>
+</div>
+<script src="../scripts/randompage.js"></script>
+</body>
+</html>
