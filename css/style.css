@@ -140,10 +140,6 @@ html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockq
  * Include this rule to trigger hasLayout and contain floats.
  */
 
-.clearfix {
-    *zoom: 1;
-}
-
 
 /* #Buttons
 ================================================== */
@@ -583,6 +579,7 @@ form {
 /* Add this CSS to your stylesheet */
 .spazio.menu-item a {
     color: #4f4f4f !important; /* Change 'red' to any color you prefer */
+	cursor: default !important;
 }
 
 .col-txt.full {
