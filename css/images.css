@@ -24,6 +24,18 @@
     display: block;
 }
 
+/* Initial state for images to be hidden */
+.image-grid a img {
+    opacity: 0;
+    transition: opacity 0.5s ease-in-out; /* Transition for fading in */
+}
+
+/* State when images are fully loaded */
+.image-grid a img.loaded {
+    opacity: 1;
+}
+
+
 /* Overlay styles */
 #overlay {
     display: none; /* Hidden by default */
