@@ -8,47 +8,6 @@
     <link rel="stylesheet" href="../css/style.css">
     <link rel="stylesheet" href="../css/skeleton.css">
     <link rel="stylesheet" href="../css/other.css">
-    <style>
-        .header-logo {
-            width: 250px; /* Adjust the width as needed */
-            height: auto; /* Maintain the aspect ratio */
-            padding: 10px;
-            padding-top: 50px; /* Add padding to the top */
-        }
-        .title-container {
-            display: flex;
-            align-items: center;
-            padding: 10px;
-            margin-top: 30px; /* Adjust this value to move the logo down */
-        }
-        .image-grid {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 10px;
-    align-content: start;
-    justify-items: end;
-}
-        
-        .image-grid img {
-            width: 100%;
-            height: auto; /* Maintain aspect ratio */
-            display: block;
-        }
-		.image-grid {
-            display: grid;
-            grid-template-columns: repeat(6, 1fr); /* Six columns */
-            gap: 10px; /* Space between the images */
-            margin-top: 20px; /* Space above the grid */
-        }
-    </style>
-    <script>
-        function showOverlay() {
-            document.getElementById('overlay').style.display = 'block';
-        }
-        function hideOverlay() {
-            document.getElementById('overlay').style.display = 'none';
-        }
-    </script>
 </head>
 <body>
     <div class="container columns">
@@ -93,40 +52,10 @@
     </div>
 	
 	<script>
-    // Function to load a single image
-    function loadImage(image) {
-        const img = document.createElement('img');
-        img.src = image.dataset.src;
-        img.alt = image.dataset.alt;
-        image.appendChild(img);
-    }
-
-    // Function to observe images
-    function observeImages() {
-        const imageGrid = document.getElementById('imageGrid');
-        const observer = new IntersectionObserver((entries, observer) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    loadImage(entry.target);
-                    observer.unobserve(entry.target);
-                }
-            });
-        });
-
-        for (let i = 1; i <= 78; i++) {
-            const a = document.createElement('a');
-            const imgPath = `../image/experimental/${i}.jpg`;
-            a.href = imgPath;
-            a.target = '_blank'; // Open link in new tab
-            a.dataset.src = imgPath;
-            a.dataset.alt = 'Hairdryer Image ' + i;
-            imageGrid.appendChild(a);
-            observer.observe(a);
-        }
-    }
-
-    // Observe images when the page loads
-    window.onload = observeImages;
+    window.onload = function() {
+            // Example usage: initializeImageObserver('../image/sketches', 21);
+            initializeImageObserver('../image/experimental', 78); // Replace with your folder path and number of images
+        };
 </script>
 	
 <div id="overlay">
@@ -141,5 +70,6 @@
     </div>
 </div>
 <script src="../scripts/randompage2.js"></script>
+<script src="../scripts/loadimages.js"></script>
 </body>
 </html>

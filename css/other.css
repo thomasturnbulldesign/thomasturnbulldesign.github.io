@@ -19,9 +19,15 @@ justify-items: end;
 }
 
 .image-grid img {
-    width: 80%;
+    width: 100%;
     height: auto; /* Maintain aspect ratio */
     display: block;
+}
+.image-grid {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr); /* Six columns */
+    gap: 10px; /* Space between the images */
+    margin-top: 20px; /* Space above the grid */
 }
 /* Overlay styles */
 #overlay {
