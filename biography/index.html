@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>Thomas Turnbull Design</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/skeleton.css">
+    <link rel="stylesheet" href="../css/other.css">
+    <style>
+        .header-logo {
+            width: 250px;
+            height: auto;
+            padding: 10px;
+            padding-top: 50px;
+        }
+        .title-container {
+            display: flex;
+            align-items: center;
+            padding: 10px;
+            margin-top: 30px;
+        }
+        /* Biography section styles */
+        .bio-section {
+            display: flex;
+            align-items: flex-start;
+            padding: 20px;
+            margin-top: 20px;
+        }
+        .bio-image {
+            width: 300px;
+            height: auto;
+            margin-right: 20px;
+        }
+        .bio-text {
+            flex: 1;
+        }
+        .image-grid {
+            display: grid;
+            grid-template-columns: repeat(6, 1fr);
+            gap: 10px;
+            margin-top: 20px;
+        }
+        .image-grid img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+    </style>
+    <script>
+        function showOverlay() {
+            document.getElementById('overlay').style.display = 'flex';
+        }
+        function hideOverlay() {
+            document.getElementById('overlay').style.display = 'none';
+        }
+    </script>
+</head>
+<body>
+    <div class="container columns">
+        <div class="title-container">
+            <img src="../image/logo.png" alt="Thomas Turnbull" class="header-logo" style="width: 80px; height: auto;">
+        </div>
+        
+        <!-- Biography Section -->
+        
+
+        <!-- Image Grid Section -->
+        <section class="content">
+            <div class="three columns mega-bottom">
+                <ul id="nav-desk">
+                    <li class="menu-item"><a href="/biography">BIOGRAPHY</a></li>
+                    <li class="spazio menu-item">
+                        <a>PROJECTS \\</a>
+                    </li>
+                    <li class="menu-item menu-item-has-children">
+                        <a href="/hairdryers">HAIR DRYERS</a>
+                        <ul class="sub-menu">
+                            <li class="sub-cat menu-item"><a href="https://www.fondazioneachillecastiglioni.it/la-fondazione/direzione/">direzione</a></li>
+                            <li class="sub-cat menu-item"><a href="https://www.fondazioneachillecastiglioni.it/la-fondazione/soci-e-partecipanti/">soci e partecipanti</a></li>
+                            <li class="sub-cat menu-item"><a href="https://www.fondazioneachillecastiglioni.it/sostenitori/">sostenitori</a></li>
+                            <li class="sub-cat menu-item"><a href="https://www.fondazioneachillecastiglioni.it/la-fondazione/persone/">persone</a></li>
+                            <li class="sub-cat menu-item"><a href="https://www.fondazioneachillecastiglioni.it/la-fondazione/attivita/">attività</a></li>
+                            <li class="sub-cat menu-item"><a href="https://www.fondazioneachillecastiglioni.it/gallery/">Gallery</a></li>
+                        </ul>
+                    </li>
+                    <li class="menu-item"><a href="/stihl">STIHL</a></li>
+                    <li class="prodotti-menu-item menu-item menu-item-has-children">
+                        <a href="/experimental">EXPERIMENTAL FUTURES</a>
+                    </li>
+                    <li class="post-menu-item menu-item"><a href="/projectors">PROJECTORS</a></li>
+                    <li class="spazio menu-item"><a>MISC \\</a></li>
+                    <li class="menu-item"><a href="/sketches">SKETCHES</a></li>
+                    <li class="menu-item"><a href="/cad">CAD</a></li>
+                    <li class="menu-item menu-item-has-children">
+                        <a onclick="showOverlay(); return false;">RANDOM PAGE</a>
+                    </li>
+                </ul>
+            </div>
+            <section class="bio-section">
+                <img src="../image/biography/bio.jpg" alt="Biography Image" class="bio-image">
+                <div class="bio-text">
+                    <h2>BIOGRAPHY</h2>
+                    <p>I AM A SECOND-YEAR INDUSTRIAL DESIGN STUDENT STUDYING AT LOUGHBOROUGH UNIVERSITY, WHERE IN THE FIRST YEAR I ACHIEVED A 2:1.</p>
+
+<p>IN ADDITION TO MY UNIVERSITY WORK, I HAVE COMPLETED OVER 50 HOURS OF VOLUNTEERING AND LED MY HALL'S VOLUNTEERING DEPARTMENT LAST YEAR AS A HALL COMMITTEE MEMBER.</p>
+
+<p>LAST YEAR, I WAS THE COURSE REPRESENTATIVE FOR FIRST-YEAR INDUSTRIAL DESIGN, AND THIS YEAR I AM THE DESIGN SCHOOL REPRESENTATIVE, BEING RESPONSIBLE FOR COMMUNICATIONS BETWEEN STAFF AND STUDENTS.</p>
+
+<p>I AM DEEPLY MOTIVATED BY PERSONAL AND PROFESSIONAL GROWTH AND SPEND TIME EVERY DAY PRACTICING SKILLS IN CAD, SKETCHING, AND DESIGN SOFTWARE.</p>
+
+
+                </div>
+            </section>
+        </section>
+    </div>
+
+    <div id="overlay">
+        <div class="window">
+            <div class="window-header">
+                <span>Windows XP</span>
+                <span class="close-btn" onclick="hideOverlay()">X</span>
+            </div>
+            <div class="window-content">
+                <img id="fit-image" alt="Random Image">
+            </div>
+        </div>
+    </div>
+    <script src="../scripts/randompage2.js"></script>
+</body>
+</html>
