@@ -3,6 +3,13 @@ function loadImage(image) {
     const img = document.createElement('img');
     img.src = image.dataset.src;
     img.alt = image.dataset.alt;
+
+    // Add event listener to detect when the image is fully loaded
+    img.onload = () => {
+        img.classList.add('loaded');
+    };
+
+    // Append the image to the element
     image.appendChild(img);
 }
 
