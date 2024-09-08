@@ -20,11 +20,14 @@ function observeImages(folderPath, numImages) {
 
     for (let i = 1; i <= numImages; i++) {
         const a = document.createElement('a');
-        const imgPath = `${folderPath}/${i}.jpg`;
-        a.href = imgPath;
+        const lowresPath = `${folderPath}_lowres/${i}.jpg`;
+        const highresPath = `${folderPath}/${i}.jpg`;
+
+        a.href = highresPath; // Link to the high-res image
         a.target = '_blank'; // Open link in new tab
-        a.dataset.src = imgPath;
+        a.dataset.src = lowresPath; // Load low-res image
         a.dataset.alt = 'Image ' + i;
+
         imageGrid.appendChild(a);
         observer.observe(a);
     }
